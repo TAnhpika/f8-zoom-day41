@@ -1,3 +1,3 @@
-// import styles from "./ProductCard.module.scss";
+// import styles from "./Loading.module.scss";
 
-export default function ProductCard() {}
+export default function Loading() {}

@@ -1,1 +1,14 @@
+.wrapper {
+    .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px;
+        list-style: none;
 
+        .item {
+            border: 1px solid #333;
+            padding: 10px;
+            background-color: #2ccaff49;
+        }
+    }
+}
