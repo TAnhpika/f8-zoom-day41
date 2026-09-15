@@ -1,7 +1,7 @@
 import { HIDE_LOADING, SHOW_LOADING } from "./constants";
 
 const initState = {
-    loading: false,
+    isLoading: false,
 };
 
 const reducer = (state = initState, action) => {
@@ -9,12 +9,12 @@ const reducer = (state = initState, action) => {
         case SHOW_LOADING:
             return {
                 ...state,
-                loading: true,
+                isLoading: true,
             };
         case HIDE_LOADING:
             return {
                 ...state,
-                loading: false,
+                isLoading: false,
             };
 
         default:
