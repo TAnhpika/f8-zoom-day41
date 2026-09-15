@@ -1,7 +1,10 @@
 import { useSelector } from "react-redux";
-import { getList } from "./selectors";
+import { getDetail, getList } from "./selectors";
 
 export const useProducts = () => {
-    const list = useSelector(getList);
-    return list;
+    return useSelector(getList);
+};
+
+export const useProductDetail = () => {
+    return useSelector(getDetail);
 };

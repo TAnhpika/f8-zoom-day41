@@ -1,8 +1,17 @@
-// import styles from "./ProductCard.module.scss";
+import styles from "./ProductCard.module.scss";
 
-export default function ProductCard({ title = "", desc = "" }) {
+import { useNavigate } from "react-router";
+
+export default function ProductCard({ title = "", desc = "", link }) {
+    const navigate = useNavigate();
+
     return (
-        <div>
+        <div
+            className={styles.wrapper}
+            onClick={() => {
+                navigate(link);
+            }}
+        >
             <h2>{title}</h2>
             <p>{desc}</p>
         </div>

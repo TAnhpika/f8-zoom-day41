@@ -24,6 +24,7 @@ export default function ProductList() {
                         <ProductCard
                             title={product.title}
                             desc={product.description}
+                            link={product.slug}
                         />
                     </li>
                 ))}

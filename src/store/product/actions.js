@@ -1,5 +1,5 @@
 import http from "@/utils/http";
-import { GET_LIST, SET_LIST } from "./constants";
+import { GET_DETAIL, GET_LIST, SET_DETAIL, SET_LIST } from "./constants";
 import { hideLoading, showLoading } from "../ui/actions";
 
 export const getList = () => {
@@ -24,6 +24,32 @@ export const getList = () => {
 export const setList = (payload) => {
     return {
         type: SET_LIST,
+        payload,
+    };
+};
+
+export const getDetail = (slug) => {
+    return async (dispatch) => {
+        dispatch({
+            type: GET_DETAIL,
+        });
+
+        dispatch(showLoading());
+
+        try {
+            const response = await http.get(`/products/${slug}`);
+            dispatch(setDetail(response.data));
+        } catch (error) {
+            console.error(error.message);
+        } finally {
+            dispatch(hideLoading());
+        }
+    };
+};
+
+export const setDetail = (payload) => {
+    return {
+        type: SET_DETAIL,
         payload,
     };
 };
